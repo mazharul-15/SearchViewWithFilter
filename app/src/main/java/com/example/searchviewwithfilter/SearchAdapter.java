@@ -11,11 +11,13 @@ import android.widget.TextView;
 public class SearchAdapter extends BaseAdapter {
 
     Context context;
-    String[] data, nwData;
+    String[] data;
+    String[] nwData;
     LayoutInflater layoutInflater;
     SearchAdapter(Context context, String[] data)
     {
         this.context = context;
+        this.nwData = data;
         this.data = data;
         layoutInflater = LayoutInflater.from(context);
     }
@@ -48,6 +50,17 @@ public class SearchAdapter extends BaseAdapter {
 
     public void filter(String str)
     {
+        for(int i = 0; i < data.length; i++)
+        {
+            data[i] = null;
+        }
 
+        for(String str2 : nwData)
+        {
+            if(str2.contains(str))
+            {
+
+            }
+        }
     }
 }
